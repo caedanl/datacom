@@ -9,7 +9,9 @@
 
 import './App.css';
 import axios from 'axios';
-import { ReactComponent as DataComLogo } from './assets/datacom-primary.svg'
+import Header from './components/Header';
+import Body from './components/Body';
+
 
 function App() {
 
@@ -18,29 +20,12 @@ function App() {
          .then(res => console.log(res.data))
    }
 
-   const toSentenceCase = (word) => {
-      return word[0].toUpperCase() + word.substr(1, word.length-1)
-   }
-
-   const navArray = ['solutions', 'industries', 'discover', 'about us', 'careers']
+   const navigationItems = ['solutions', 'industries', 'discover', 'about us', 'careers']
 
    return (
       <div className="App">
-         <header>
-            <div className="innerHeader">
-               <DataComLogo height="24px" />
-               <nav>
-                  <ul>
-                     {
-                        navArray.map((item) => (
-                           <li>{toSentenceCase(item)}</li>
-                        ))
-                     }
-                  </ul>
-               </nav>
-               <aside>aside</aside>
-            </div>
-         </header>
+         <Header navigationItems={navigationItems}/>
+         <Body />
       </div>
    );
 }
