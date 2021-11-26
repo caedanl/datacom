@@ -20,7 +20,7 @@ require('dotenv').config();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
-app.use(express.static("react-client/build"));
+app.use(express.static("client/build"));
 
 // MONGOOSE SETUP ///////////////////////////////////////
 const uri = process.env.DB_URL
@@ -37,7 +37,7 @@ connection.once("open", () => {
 
 // REACT CLIENT /////////////////////////////////////////
 app.get("/", (req, res) => {
-   res.sendFile(path.join(__dirname, "react-client", "build", "index.html"))
+   res.sendFile(path.join(__dirname, "client", "build", "index.html"))
 })
 
 // MESSAGES ROUTER //////////////////////////////////////
