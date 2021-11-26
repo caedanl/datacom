@@ -1,4 +1,5 @@
 import '../styles/Body.css'
+import Form from './Form';
 
 const Body = () => {
 
@@ -10,7 +11,7 @@ const Body = () => {
             <p>Get in touch with us using the contact form below. Our friendly team will be in touch.</p>
          </section>
          <section>
-
+            <Form />
          </section>
       </>
    )

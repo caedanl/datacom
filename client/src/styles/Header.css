@@ -43,7 +43,7 @@ nav li {
 }
 
 nav li:hover {
-   background-color: var(--superlight-grey);
+   background-color: var(--superlight-gray);
 }
 
 nav li::first-letter {
