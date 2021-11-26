@@ -9,7 +9,9 @@ const Header = ({ navigationItems }) => {
    <header>
       <div className="innerHeader">
          {/* LOGO */}
-         <DataComLogo height="24px" />
+         <aside>
+            <DataComLogo id="logo" />
+         </aside>
          {/* NAVIGATION */}
          <nav>
             <ul>{navigationItems.map((item) => <li>{toSentenceCase(item)}</li>)}</ul>

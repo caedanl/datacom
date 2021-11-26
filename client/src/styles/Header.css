@@ -15,6 +15,10 @@ header {
    padding: 0 2em;
 }
 
+#logo {
+   height: 24px;
+}
+
 nav {
    display: flex;
    align-items: center;
@@ -39,6 +43,7 @@ nav li {
    cursor: pointer;
    font-weight: 500;
    font-size: 1rem;
+   white-space: nowrap;
    color: var(--dark-blue)
 }
 
@@ -69,6 +74,7 @@ header aside button {
    -ms-border-radius: 500px;
    -o-border-radius: 500px;
    cursor: pointer;
+   white-space: nowrap;
 }
 
 header aside button:hover {
@@ -80,4 +86,10 @@ header aside .search {
    height: 36px;
    width: 36px;
    color: var(--dark-blue);
+}
+
+@media only screen and (max-width: 1000px) {
+   nav {
+      display: none;
+   }
 }

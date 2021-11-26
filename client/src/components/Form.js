@@ -8,16 +8,11 @@ const Form = () => {
 
    const onSubmit = (data) => {
       console.log(data);
-
    };
-
-   console.log(errors)
 
    // const handleSubmit = () => {
    //    console.log("")
    // }
-
-   // console.log(watch())
 
    return (
       <>
