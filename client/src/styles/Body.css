@@ -1,5 +1,5 @@
 section {
    padding: 2em;
-   max-width: 1200px;
+   max-width: var(--content-limit);
    margin: 0 auto;
 }

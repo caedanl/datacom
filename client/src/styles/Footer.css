@@ -1,0 +1,67 @@
+footer {
+   display: flex;
+   justify-content: center;
+   background-color: white;
+   border-top: 1px solid var(--light-gray);
+   margin-top: 100px;
+   /* height: 80px; */
+}
+
+.innerFooter {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   max-width: var(--content-limit);
+   padding: 3em 2em;
+   color: var(--dark-blue)
+}
+
+.innerFooter :is(.card, aside) {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   font-size: 0.9rem;
+}
+
+.card .title {
+   font-weight: 700;
+   padding: 0.5em 0
+}
+
+.innerFooter :is(.card, aside) li {
+   font-weight: 500;
+   list-style: none;
+   text-decoration: none;
+   padding: 0.5em 0;
+}
+
+.innerFooter aside {
+}
+
+.innerFooter aside ul {
+   margin: 0;
+   padding: 0;
+}
+
+.asideInner {
+   padding-left: 1em;
+   border-left: 1px solid var(--light-gray);
+}
+
+.asideInner span {
+   display: inline-block;
+   padding-top: 1em;
+   font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 800px) {
+   .innerFooter {
+      flex-direction: column;
+      gap: 2em;
+   }
+
+   .asideInner {
+      border: 0;
+      padding-left: 0;
+   }
+}

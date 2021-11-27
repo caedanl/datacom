@@ -7,6 +7,7 @@ const Form = () => {
    const { register, handleSubmit, formState: { errors } } = useForm();
 
    const onSubmit = (data) => {
+      console.log(errors);
       console.log(data);
    };
 

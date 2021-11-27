@@ -5,6 +5,7 @@
    --superlight-gray: #f0f0f0;
    --dark-blue: #0a1839;
    --blue: #0055ff;
+   --content-limit: 1300px;
 }
 
 * {

@@ -11,7 +11,7 @@ header {
    align-items: center;
    justify-content: space-between;
    width: 100%;
-   max-width: 1300px;
+   max-width: var(--content-limit);
    padding: 0 2em;
 }
 
@@ -78,7 +78,7 @@ header aside button {
 }
 
 header aside button:hover {
-   background-color: var(--superlight-grey);
+   background-color: var(--superlight-gray);
 }
 
 header aside .search {
