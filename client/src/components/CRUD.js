@@ -24,13 +24,15 @@ const CRUD = () => {
 
    return (
       <>
-         <h1>Crud</h1>
+         <div>Messages: {messageData.length}</div>
          <button onClick={getMessages}>Refresh</button>
          {
             messageData.map((item) => (
                <div className='crudCard'>
                   <div className='crudContent'>
+                  <span className='subtitle'>From:</span>
                   <h1>{item.firstName} {item.lastName}</h1>
+                  <span className='subtitle'>Subject:</span>
                   <div className='subject'>{item.subject}</div>
                   <div className='message'>{item.message}</div>
                   </div>
