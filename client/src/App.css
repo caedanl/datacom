@@ -5,6 +5,12 @@
    --superlight-gray: #f0f0f0;
    --dark-blue: #0a1839;
    --blue: #0055ff;
+   --green: #00e244;
+   --green-t: #00e2444d;
+   --orange: #ff7b00;
+   --orange-t: #ff7b004d;
+   --red: #fd0d41;
+   --red-t: #fd0d414d;
    --content-limit: 1300px;
 }
 

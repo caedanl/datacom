@@ -6,23 +6,27 @@ import { toSentenceCase } from '../utils';
 const Header = ({ navigationItems }) => {
 
    return (
-   <header>
-      <div className="innerHeader">
-         {/* LOGO */}
-         <aside>
-            <DataComLogo id="logo" />
-         </aside>
-         {/* NAVIGATION */}
-         <nav>
-            <ul>{navigationItems.map((item) => <li>{toSentenceCase(item)}</li>)}</ul>
-         </nav>
-         {/* LOGIN AND SEARCH */}
-         <aside>
-            <button onClick="">Sign in</button>
-            <SearchIcon className="search" />
-         </aside>
-      </div>
-   </header>
+      <header>
+         <div className="innerHeader">
+            {/* LOGO */}
+            <aside>
+               <a href="/">
+                  <DataComLogo id="logo" />
+               </a>
+            </aside>
+            {/* NAVIGATION */}
+            <nav>
+               <ul>{navigationItems.map((item) => <li>{toSentenceCase(item)}</li>)}</ul>
+            </nav>
+            {/* LOGIN AND SEARCH */}
+            <aside>
+               <a href="/admin">
+                  <button>Sign in</button>
+               </a>
+               <SearchIcon className="search" />
+            </aside>
+         </div>
+      </header>
    )
 }
 

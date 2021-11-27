@@ -15,6 +15,7 @@ const axios = require('axios');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const messageRouter = require("./routes/messageRoutes")
+const api = require('./routes/api')
 require('dotenv').config();
 
 app.use(express.urlencoded({ extended: true }));
@@ -35,17 +36,17 @@ connection.once("open", () => {
    console.log("Connection is up");
 });
 
-// REACT CLIENT /////////////////////////////////////////
-app.get("/", (req, res) => {
-   res.sendFile(path.join(__dirname, "../client", "build", "index.html"))
-})
-
-app.get("/test", (req, res) => {
-   res.send("It worked")
-})
-
 // MESSAGES ROUTER //////////////////////////////////////
 app.use(messageRouter);
+app.use(api);
+
+
+
+// REACT CLIENT /////////////////////////////////////////
+app.get("*", (req, res) => {
+   res.sendFile(path.join(__dirname, "/client", "build", "index.html"))
+})
+
 
 // LISTEN ///////////////////////////////////////////////
 // const PORT = process.env.PORT || 5000

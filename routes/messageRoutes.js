@@ -3,6 +3,18 @@ const app = express();
 // const mongoose = require('mongoose');
 const Message = require('../models/messages');
 
+// GET ALL MESSAGE ///////////////////////////////////////
+app.get("/api/message/all", async (req, res) => {
+   try {
+      const results = await Message.find();
+      console.log(results)
+      res.send(results)
+   } catch (err) {
+      console.log("ERROR: " + err.reason);
+      res.sendStatus(404)
+   }
+})
+
 // ADD MESSAGE //////////////////////////////////////////
 app.post("/api/message/add", async (req, res) => {
    try {

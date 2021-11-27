@@ -10,8 +10,8 @@ const Form = () => {
    const onSubmit = (data) => {
       console.log(errors);
       console.log(data);
-      axios.get("http://localhost/test")
-      .then(res => console.log(res))
+      axios.get("/api/test")
+      .then(res => console.log(res.status + " - " + res.data))
    };
 
    return (
