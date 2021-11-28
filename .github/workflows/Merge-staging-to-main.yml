@@ -1,9 +1,10 @@
-name: Scan and merge to staging
+name: Code analysis
 
 on:
   push:
     branches:
       - "develop"
+      - "main"
 
 jobs:
   Analyze:
