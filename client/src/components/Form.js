@@ -15,8 +15,10 @@ const Form = () => {
          data: data
       }
       axios(config)
-         .then(res => console.log(res.data))
-         .then(() => reset())
+         .then(res => {
+            console.log(res.data);
+            reset();
+         })
          .catch(() => console.log("There was a catch error"))
    };
 
