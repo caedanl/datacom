@@ -5,7 +5,9 @@
    --light-gray: #dadada;
    --superlight-gray: #f0f0f0;
    --dark-blue: #0a1839;
+   --dark-blue-t: #0a18394d;
    --blue: #0055ff;
+   --blue-t: #0055ff4d;
    --green: #00e244;
    --green-t: #00e2444d;
    --orange: #ff7b00;
@@ -38,4 +40,20 @@ h2 {
 
 h3 {
    font-size: 1.6rem;
+}
+
+.bottomHeavy {
+   margin-top: 0;
+}
+
+.topHeavy {
+   margin-bottom: 0;
+}
+
+.margin-2-1 {
+   margin: 2em 1em;
+}
+
+.margin-0-2 {
+   margin: 0 2em;
 }

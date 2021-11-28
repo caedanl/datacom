@@ -21,11 +21,13 @@ const CRUD = () => {
          })
          .catch(() => console.log("There was a catch error"));
    }
-
+   
    return (
       <>
-         <div>Messages: {messageData.length}</div>
-         <button onClick={getMessages}>Refresh</button>
+         <div className="crudHeader">
+            <h3 className='bottomHeavy'>Messages: {messageData.length}</h3>
+            <button className='crudButton margin-0-2' onClick={getMessages}>Refresh</button>
+         </div>
          {
             messageData.map((item) => (
                <div className='crudCard'>
@@ -37,10 +39,14 @@ const CRUD = () => {
                   <div className='message'>{item.message}</div>
                   </div>
                   <div className='crudControls'>
-                     <button className='crudButton' id="open">Open</button>
-                     <button className='crudButton' id="resolve">Resolve</button>
-                     <button className='crudButton' id="edit">Edit</button>
-                     <button className='crudButton' id="delete">Delete</button>
+                     <div className='crudControlsInner'>
+                        <button className='crudButton' id="open">Open</button>
+                        <button className='crudButton' id="resolve">Resolve</button>
+                     </div>
+                     <div className='crudControlsInner'>
+                        <button className='crudButton' id="edit">Edit</button>
+                        <button className='crudButton' id="delete">Delete</button>
+                     </div>
                   </div>
                </div>
             ))
