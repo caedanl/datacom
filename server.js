@@ -33,7 +33,7 @@ mongoose.connect(uri, {
 
 const connection = mongoose.connection;
 connection.once("open", () => {
-   console.log("Connection is up");
+   console.log("MongoDB Atlas is connected");
 });
 
 // MESSAGES ROUTER //////////////////////////////////////
@@ -49,7 +49,6 @@ app.get("*", (req, res) => {
 
 
 // LISTEN ///////////////////////////////////////////////
-// const PORT = process.env.PORT || 5000
 app.listen(3000, () => console.log("Listening test on port " + "3000"))
 
 
