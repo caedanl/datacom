@@ -5,13 +5,19 @@ import axios from 'axios';
 
 const Form = () => {
 
-   const { register, handleSubmit, formState: { errors } } = useForm();
+   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
    const onSubmit = (data) => {
-      console.log(errors);
-      console.log(data);
-      axios.get("/api/test")
-      .then(res => console.log(res.status + " - " + res.data))
+      const config = {
+         method: 'post',
+         url: "/api/message/add",
+         headers: {},
+         data: data
+      }
+      axios(config)
+         .then(res => console.log(res.data))
+         .then(() => reset())
+         .catch(() => console.log("There was a catch error"))
    };
 
    return (
