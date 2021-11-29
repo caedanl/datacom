@@ -24,14 +24,14 @@ jobs:
           file_name: .env
       - name: Build client
         working-directory: client
-        run: \
+        run: |
           npm install
           npm run build
       - name: Start server
-        run: \
+        run: |
           npm start
       - name: Start Cypress tests
-        run: \
+        run: |
           npm test
 
   # Analyze:
