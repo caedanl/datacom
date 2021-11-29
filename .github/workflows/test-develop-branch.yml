@@ -17,6 +17,10 @@ jobs:
           node-version: 16
       - run: npm install
       - run: cd client && npm install
+      - name: create env file
+        run: 
+          touch .env
+          echo DB_URL=${{ secrets.DB_URL }} >> .env
       - run: npm run build
       - run: npm start
       - run: npm test
