@@ -7,6 +7,7 @@ on:
 
 jobs:
   Cypress:
+    name: Cypress tests
     runs-on: ubuntu-latest
 
     steps:
@@ -14,35 +15,38 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
+
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
+
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1
         with:
           envkey_DB_URL: ${{ secrets.DB_URL }}
           file_name: .env
+
       - name: Build client
         working-directory: client
         run: |
           npm install
           npm run build
-      - name: Start server
-        run: |
-          npm start & npx wait-on http://localhost:3000
-      - name: Start Cypress tests
-        run: |
-          npm test
 
-  # Analyze:
-  #   name: SonarCloud scan
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #       with:
-  #         fetch-depth: 0
-  #     - name: SonarCloud Scan
-  #       uses: sonarsource/sonarcloud-github-action@master
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Start server
+        run: npm start & npx wait-on http://localhost:3000
+
+      - name: Start Cypress tests
+        run: npm test
+
+  Analyze:
+    name: SonarCloud scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
