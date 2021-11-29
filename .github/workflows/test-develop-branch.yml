@@ -17,10 +17,10 @@ jobs:
           node-version: 16
       - run: npm install
       - run: cd client && npm install
-      - name: create env file
-        run: 
-          touch .env
-          echo DB_URL=${{ secrets.DB_URL }} >> .env
+      - name: Create .env file
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_DB_URL: ${{ secrets.DB_URL }}
       - run: npm run build
       - run: npm start
       - run: npm test
