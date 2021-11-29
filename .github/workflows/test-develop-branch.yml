@@ -22,16 +22,16 @@ jobs:
         uses: SpicyPizza/create-envfile@v1
         with:
           envkey_DB_URL: ${{ secrets.DB_URL }}
+          file_name: .env
       - name: Build client
         run: \
-          cd client && npm run build
+          npm run build
       - name: Start server
         run: \
           npm start
       - name: Start Cypress tests
-        run: \  
+        run: \
           npm test
-
 
   # Analyze:
   #   name: SonarCloud scan
