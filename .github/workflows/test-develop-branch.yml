@@ -11,19 +11,27 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Cypress runs
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - run: npm install
-      - run: cd client && npm install
+      - name: Install dependencies
+        run: |
+          npm install
+          cd client && npm install
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1
         with:
           envkey_DB_URL: ${{ secrets.DB_URL }}
-      - run: npm run build
-      - run: npm start
-      - run: npm test
+      - name: Build client
+        run: \
+          cd client && npm run build
+      - name: Start server
+        run: \
+          npm start
+      - name: Start Cypress tests
+        run: \  
+          npm test
+
 
   # Analyze:
   #   name: SonarCloud scan
