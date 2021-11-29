@@ -21,7 +21,7 @@ const Header = ({ navigationItems }) => {
             {/* LOGIN AND SEARCH */}
             <aside>
                <a href="/admin">
-                  <button>Sign in</button>
+                  <button id="signInButton">Sign in</button>
                </a>
                <SearchIcon className="search" />
             </aside>
