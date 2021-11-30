@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 const baseUrl = Cypress.config().baseUrl
 
 describe('Renders the home page', () => {
@@ -18,9 +20,6 @@ describe('Renders the home page', () => {
       cy.get('#logo').click();
       cy.url().should('eq', baseUrl);
    });
-
-   // it('Returns to home page correctly', () => {
-   // })
 
    it('Form handles errors correctly', () => {
       cy.get('#submitButton').click();

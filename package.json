@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
+    "test": "cypress open",
     "start": "node server.js",
     "build": "cd client && npm run build",
     "develop": "nodemon server.js"
@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/CaedanLavender/datacom#readme",
   "dependencies": {
+    "@cypress/code-coverage": "^3.9.11",
     "axios": "^0.24.0",
+    "babel-plugin-istanbul": "^6.1.1",
     "cors": "^2.8.5",
     "cypress": "^9.1.0",
     "dotenv": "^10.0.0",
