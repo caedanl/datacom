@@ -29,14 +29,14 @@ const Form = () => {
             <fieldset>
                <label>
                   <span className="title">First Name</span>
-                  <input className={errors.firstName && "error"} type="text" placeholder="first name"
+                  <input id='firstNameInput' className={errors.firstName && "error"} type="text" placeholder="first name"
                      {...register("firstName", { required: "Please provide your first name", })}
                   />
                   <span className="error">{(errors.firstName && errors.firstName.message)}</span>
                </label>
                <label>
                   <span className="title">Last Name</span>
-                  <input type="text" placeholder="last name"
+                  <input id='lastNameInput' type="text" placeholder="last name"
                      {...register("lastName")}
                   />
                </label>
@@ -44,14 +44,14 @@ const Form = () => {
             <fieldset>
                <label>
                   <span className="title">Email</span>
-                  <input className={errors.email && "error"} type="text" placeholder="john@example.com"
+                  <input id='emailInput' className={errors.email && "error"} type="text" placeholder="john@example.com"
                      {...register("email", { required: "We'll need an email address to get back to you" })}
                   />
                   <span className="error">{(errors.email && errors.email.message)}</span>
                </label>
                <label>
                   <span className="title">Phone number</span>
-                  <input type="text" placeholder="025 555 555"
+                  <input id='phoneInput' type="text" placeholder="025 555 555"
                      {...register("phone")}
                   />
                </label>
@@ -59,7 +59,7 @@ const Form = () => {
             <fieldset>
                <label>
                   <span className="title">Subject</span>
-                  <input className={errors.subject && "error"} type="text" placeholder="Subject"
+                  <input id='subjectInput' className={errors.subject && "error"} type="text" placeholder="Subject"
                      {...register("subject", { required: "Subject needed" })}
                   />
                   <span className="error">{(errors.subject && errors.subject.message)}</span>
@@ -68,13 +68,13 @@ const Form = () => {
             <fieldset>
                <label>
                   <span className="title">Message</span>
-                  <textarea className={errors.messageContent && "error"} placeholder="Tell us more..."
+                  <textarea id='messageInput' className={errors.messageContent && "error"} placeholder="Tell us more..."
                      {...register("messageContent", { required: "Please tell us how we can help you", })}
                   />
                   <span className="error">{(errors.messageContent && errors.messageContent.message)}</span>
                </label>
             </fieldset>
-            <button type="submit">Submit</button>
+            <button id='submitButton' type="submit">Submit</button>
          </form>
       </>
    )
