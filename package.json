@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open",
+    "test": "cypress run",
+    "cy:open": "cypress open",
     "start": "node server.js",
     "build": "cd client && npm run build",
     "develop": "nodemon server.js"
