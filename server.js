@@ -21,12 +21,13 @@ require('dotenv').config();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
-app.use(express.static("client/build"));
+// app.use(express.static("client/build"));
+app.use(express.static(path.resolve(__dirname, 'client/', 'build')));
 
 // MONGOOSE SETUP ///////////////////////////////////////
-const uri = process.env.DB_URL
+const URI = process.env.DB_URL
 
-mongoose.connect(uri, {
+mongoose.connect(URI, {
    useNewUrlParser: true,
    useUnifiedTopology: true,
 });

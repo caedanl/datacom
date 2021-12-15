@@ -2,6 +2,7 @@ import '../styles/Header.css';
 import { ReactComponent as DataComLogo } from '../assets/datacom-primary.svg'
 import { ReactComponent as SearchIcon } from '../assets/search.svg'
 import { toSentenceCase } from '../utils';
+import { Link } from 'react-router-dom';
 
 const Header = ({ navigationItems }) => {
 
